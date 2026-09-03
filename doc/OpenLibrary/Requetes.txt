@@ -1,0 +1,16 @@
+Ce document présente les requêtes effectuées pour obtenir les fichiers présents dans le fichier.
+
+curl "https://openlibrary.org/search.json?q=exupery" > exupery.json
+  ->  tous les works contenant "exupery"
+
+curl "https://openlibrary.org/search.json?q=le+petit+prince" > petit_prince.json
+  ->  tous les works contenant "le", "petit" et "prince"
+
+curl "https://openlibrary.org/search.json?q=le+petit+prince&language=fre" > petit_prince2.json
+  ->  tous les works contenant "le", "petit" et "prince" de langue française
+
+curl "https://openlibrary.org/works/OL24279923W.json" > petit_prince_retrouvé.json
+  ->  toutes les informations sur le livre (works) dont la clef est OL24279923W
+
+curl "https://openlibrary.org/authors/OL1621059A.json" > Jean-Pierre_Davidts.json
+  ->  toutes les informations sur l'auteur dont la clef est OL1621059A
