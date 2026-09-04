@@ -39,5 +39,4 @@ class Game:
             mode = "Dés"
         else:
             mode = self.game_mode
-
         return f"{mode} entre {self.player1.username} et {self.player2.username}. Gagnante : {winner}"
