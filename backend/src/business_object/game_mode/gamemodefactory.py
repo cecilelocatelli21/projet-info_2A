@@ -1,6 +1,6 @@
-from business_object.game_mode.gamemode import GameMode
-from business_object.game_mode.dicemodemode import DiceMode
 from business_object.game_mode.coinflipmode import CoinFlipMode
+from business_object.game_mode.dicemode import DiceMode
+from business_object.game_mode.gamemode import GameMode
 
 
 class GameModeFactory:
