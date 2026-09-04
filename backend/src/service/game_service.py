@@ -1,5 +1,4 @@
 import os
-import secrets
 
 from fastapi import HTTPException
 
@@ -32,8 +31,21 @@ class GameService:
         if not p1 or not p2:
             raise HTTPException(status_code=404, detail="Player not found")
 
-        result = secrets.choice(["heads", "tails"])
-        winner = p1 if result == choice else p2
+        # Get rules
+        mode = get_mode(game_mode)
+
+        # Play the game following rules
+        # Eventualy add extra parameters like choice (included in kwargs)
+        game = mode.play(p1, p2, **kwargs)
+
+        # Calculate Elo ratings based on the game result 
+        compute(game)
+
+        # Update Players object in the database (not this week)
+        PlayerDao().update(player1)
+        PlayerDao().update(player2)
+
+        return game
 
         self.update_player_ratings(p1, p2, winner)
 
