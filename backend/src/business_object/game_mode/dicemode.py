@@ -6,7 +6,7 @@ from business_object.game_mode.gamemode import GameMode
 from business_object.player import Player
 
 
-class Dice(GameMode):
+class DiceMode(GameMode):
     "Documentation"
 
     def play(

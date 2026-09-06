@@ -7,7 +7,7 @@ from business_object.game_mode.gamemode import GameMode
 from business_object.player import Player
 
 
-class FlipCoin(GameMode):
+class CoinFlipMode(GameMode):
     "Documentation"
 
     def play(

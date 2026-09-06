@@ -1,12 +1,6 @@
-import datetime
-import secrets
-import random
-
-from business_object.game import Game
-from business_object.game_mode.dicemode import Dice
-from business_object.game_mode.flipcoin import FlipCoin
+from business_object.game_mode.coinflipmode import CoinFlipMode
+from business_object.game_mode.dicemode import DiceMode
 from business_object.game_mode.gamemode import GameMode
-from business_object.player import Player
 
 
 class GameModeFactory:
@@ -23,9 +17,10 @@ class GameModeFactory:
         Raises:
             ValueError: If the requested game_mode is not supported.
         """
-        if game_mode == 'dice'
+        if game_mode == 'dice':
             return DiceMode()
-        if game_mode == 'flipcoin'
-            return FlipCoinMode()
-        if game_mode not in ("flipcoin", "dice")
-            raise ValueError "gamemode must be 'coinflip' or 'dice'"
+        elif game_mode == 'flipcoin':
+            return CoinFlipMode()
+        else:
+            raise ValueError
+            "game mode must be 'coinflip' or 'dice'"
