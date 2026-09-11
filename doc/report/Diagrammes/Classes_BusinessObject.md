@@ -31,8 +31,8 @@ classDiagram
         -id_user: int
         -id_livre: str
         -statut: str
-        -date_debut: date
-        -date_fin: date
+        -date_ajout: date
+        -date_lu: date
         -isbn_edition: str
         -editeur_edition: str
         -couverture_url: str
