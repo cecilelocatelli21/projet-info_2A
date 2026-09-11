@@ -7,7 +7,7 @@ classDiagram
         -password_hash: str
         -bio: str
          
-        +verifier_mot_de_passe(mdp_saisi: str): bool
+
     }
 
     class Livre {
@@ -16,7 +16,7 @@ classDiagram
         -auteurs: str
         -annee_premiere_parution: int
          
-        +est_complet(): bool
+
     }
 
     class Abonnement {
@@ -37,27 +37,15 @@ classDiagram
         -editeur_edition: str
         -couverture_url: str
          
-        +changer_statut(nouveau_statut: str): bool
-        +est_terminee(): bool
-        +est_abandonnee(): bool
     }
 
-    class ListePersonnalisee {
-        -id_liste: int
-        -id_user: int
-        -nom: str
-        -visibilite: str
-         
-        +renommer(nouveau_nom: str): bool
-        +changer_visibilite(visibilite: str): bool
-    }
 
     class Note {
         -id_note: int
         -id_lecture: int
         -valeur: int
          
-        +modifier(nouvelle_valeur: int): bool
+
     }
 
     class Critique {
@@ -65,8 +53,7 @@ classDiagram
         -id_lecture: int
         -texte: str
         -date_publication: datetime
-         
-        +modifier(nouveau_texte: str): bool
+
     }
 
     class Like {
@@ -75,13 +62,7 @@ classDiagram
         -date_like: datetime
     }
 
-    class ContenuListe {
-        -id_liste: int
-        -id_lecture: int
-        -position: int
-         
-        +deplacer(nouvelle_position: int): bool
-    }
+
 
     Utilisateur "1" --> "0..*" Abonnement : suit (follower)
     Utilisateur "1" <-- "0..*" Abonnement : est suivi (followed)
@@ -91,7 +72,5 @@ classDiagram
     Lecture "1" *-- "0..1" Critique : rédige
     Critique "1" *-- "0..*" Like : reçoit
     Utilisateur "1" -- "0..*" Like : auteur du like
-    Utilisateur "1" -- "0..*" ListePersonnalisee : possède
-    Lecture "1" -- "0..*" ContenuListe : regroupe
-    ListePersonnalisee "1" -- "0..*" ContenuListe : contient
+
 ```
