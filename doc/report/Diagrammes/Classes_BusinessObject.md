@@ -11,11 +11,14 @@ classDiagram
     }
 
     class Livre {
-        -id_livre: str
+        -id_livre: int
+        -id_work: str
         -titre: str
         -auteurs: str
         -annee_premiere_parution: int
-         
+        -resume: str
+        -genre: str
+        -cover_url: str      
 
     }
 
@@ -41,8 +44,6 @@ classDiagram
         -id_note: int
         -id_lecture: int
         -valeur: int
-         
-
     }
 
     class Critique {
@@ -50,7 +51,6 @@ classDiagram
         -id_lecture: int
         -texte: str
         -date_publication: datetime
-
     }
 
     class Like {
