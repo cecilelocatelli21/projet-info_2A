@@ -22,8 +22,7 @@ classDiagram
     class Abonnement {
         -id_follower: int
         -id_followed: int
-        -date_abonnement: datetime 
-        
+        -date_abonnement: datetime   
     }
 
     class Lecture {
@@ -33,10 +32,8 @@ classDiagram
         -statut: str
         -date_ajout: date
         -date_lu: date
-        -isbn_edition: str
-        -editeur_edition: str
-        -couverture_url: str
-         
+        -id_edition: str
+        -couverture_url: str    
     }
 
 
